@@ -27,7 +27,9 @@
   Then invoke the callback function, passing in the first element in the array as it's argument.
 */
 
-// Code Here 
+function first(arr, cb){
+  cb(arr[0]);
+}
 
 // Do not edit the code below.
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -47,7 +49,9 @@ first(names, function(firstName){
   Then invoke the callback, passing in the last element in the array as the argument.
 */
 
-//Code Here
+function last(arr, cb){
+  cb(arr[arr.length-1]);
+}
 
 // Do not edit the code below.
 last(names, function(lastName){
@@ -65,7 +69,9 @@ last(names, function(lastName){
   Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 */
 
-//Code Here
+function multiply(x, y, cb){
+  cb(x*y);
+}
 
 // Do not edit the code below.
 multiply(4, 3, function(answer){
@@ -84,7 +90,14 @@ multiply(4, 3, function(answer){
   If the name does not exist, invoke the callback with false as the argument.
 */
 
-//Code Here 
+function contains(arr, name, cb){
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] === name ? cb(true) 
+    : i === arr.length-1 && arr[i] !== name? cb(false)
+    : null;
+    
+  }
+}
 
 // Do not edit the code below.
 contains(names, 'Colt', function(result){
@@ -105,7 +118,26 @@ contains(names, 'Colt', function(result){
   Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 */
 
-//Code Here
+function uniq(arr, cb){
+  value = null;
+  arr2 = [];
+  isDuplicate = false;
+  for (let index = 0; index < arr.length; index++) {
+    value = arr[index];
+    for (j = 0; j < arr2.length; j++) {
+      if(value === arr2[j]) isDuplicate = true;
+      
+    }
+    if(isDuplicate){
+      isDuplicate=false;
+    } 
+    else {
+      arr2.push(value);
+    }
+    
+  }
+  cb(arr2);
+}
 
 // Do not edit the code below.
 uniq(names, function(uniqArr){
