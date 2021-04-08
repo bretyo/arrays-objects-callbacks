@@ -125,7 +125,19 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   and the second item in the array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+function divider(numbersArray){
+  arr1 = [];
+  for (let index = 0; index < numbersArray.length; index+=2) {
+    arr1.push(numbersArray[index]);
+    
+  }
+  arr2 = [];
+  for (let index = 1; index < numbersArray.length; index+=2) {
+    arr2.push(numbersArray[index]);
+    
+  }
+  return [arr2, arr1];
+}
 
 
 
