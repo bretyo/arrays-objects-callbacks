@@ -160,7 +160,14 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
-
+function finder(arr){
+  let randomNumber = getRandomArbitrary();
+  for (let index = 0; index < arr.length; index++) {
+    if(randomNumber===arr[index]) return true;
+    
+  }
+  return false;
+}
 
 
 ////////// PROBLEM 8 //////////
@@ -188,8 +195,30 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem() --> [];
 */
 
-//Code Here
+// Code Here
+function removeItem(myGroceryList, item){
+  if(!myGroceryList || !item){
+    return [];
+  } 
+  let arr = myGroceryList;
+  for (let i = 0; i < myGroceryList.length; i++) {
+    if(item=== myGroceryList[i]) {
 
+      arr.splice(i,1);
+      return arr;
+    
+    }
+  }
+  return myGroceryList;
+}
+
+function addItem(myGroceryList, item){
+  if(!myGroceryList || !item){
+    return [];
+  } 
+  myGroceryList.push(item);
+  return myGroceryList;
+}
 
 
 ////////// PROBLEM 9 //////////
@@ -199,7 +228,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function maker(){
+  let arr = [];
+  for (let i = 1; i < 216; i++) {
+    arr.push(i);
+    
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 10 //////////
@@ -215,7 +251,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
-
+function addTen(numbers){
+  let arr = numbers;
+  for (let index = 0; index < numbers.length; index++) {
+    arr[index]= Number(arr[index]) +10;
+    
+  }
+  return arr;
+}
 
 
 ////////// PROBLEM 11 //////////
